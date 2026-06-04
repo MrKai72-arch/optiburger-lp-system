@@ -33,7 +33,7 @@ $burgers = $stmt->fetchAll();
         <div class="form-container">
             <h2>📝 Enter Your Burger Optimization Problem</h2>
             
-            <form method="POST" action="solve.php" id="burgerForm">
+            <form method="POST" action="solve.php">
                 <div class="form-group">
                     <label>Problem Title:</label>
                     <input type="text" name="problem_title" placeholder="e.g., My Lunch Budget" required>
@@ -76,9 +76,7 @@ $burgers = $stmt->fetchAll();
                             </td>
                             <td><strong><?php echo htmlspecialchars($burger['name']); ?></strong></td>
                             <td>RM<?php echo number_format($burger['price'], 2); ?></td>
-                            <td>
-                                <span style="color: #FFD93D;">★</span> <?php echo $burger['taste_score']; ?>/10
-                            </td>
+                            <td><span>★</span> <?php echo $burger['taste_score']; ?>/10</td>
                             <td>🔥 <?php echo $burger['calories']; ?> kcal</td>
                         </tr>
                         <?php endforeach; ?>
@@ -92,27 +90,18 @@ $burgers = $stmt->fetchAll();
                     </label>
                 </div>
                 
-                <button type="submit" id="submitBtn">🚀 Find Optimal Solution</button>
+                <button type="submit">🚀 Find Optimal Solution</button>
             </form>
         </div>
     </div>
 
     <script>
-    // Loading animation on form submit
-    document.getElementById('burgerForm').addEventListener('submit', function() {
-        const btn = document.getElementById('submitBtn');
-        btn.innerHTML = '<span class="loading"></span> Solving... Please wait';
-        btn.disabled = true;
-    });
-
-    // Dark/Light mode toggle
     function toggleTheme() {
         document.body.classList.toggle('light-mode');
         const isLight = document.body.classList.contains('light-mode');
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
 
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
