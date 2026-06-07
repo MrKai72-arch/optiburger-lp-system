@@ -54,12 +54,6 @@ if(isset($_POST['login'])) {
                 
                 <button type="submit" name="login">Login</button>
             </form>
-            
-            <div class="demo-info">
-                <p>📝 Demo Account:</p>
-                <p><strong>Username:</strong> student1</p>
-                <p><strong>Password:</strong> password123</p>
-            </div>
         </div>
     </div>
 </body>
