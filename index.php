@@ -33,7 +33,7 @@ if(isset($_POST['login'])) {
 <body>
     <div class="login-container">
         <div class="login-box">
-            <h1>🍔 OptiBurger</h1>
+            <h1>🍔 OptiBurgerlll</h1>
             <h2>Burger Selection Optimizer</h2>
             <p class="subtitle">Using Linear Programming</p>
             
